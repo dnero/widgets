@@ -1,18 +1,15 @@
+// http://jsben.ch/#/0Cl6P
+
 function towerBuilder(nFloors) {
 
-	var base = 2 * nFloors - 1, // calculate the maximum width
-		level = 1, // what floor we're currently building
-		floor = '*', // flooring
-		padding = (base - floor.length) / 2, // padding to apply to sides
+	var floor = '*'.repeat(2 * nFloors - 1), // build foundation
+		padding = '', // padding to apply to sides
 		tower = []; // final tower
 
-	for(; level <= nFloors; level++){ // build top to bottom
-		padding = ' '.repeat((base - floor.length) / 2); // determine padding needed
-		floor = '*'.repeat(floor.length); // build floor
-
-		tower.push(padding + floor + padding); // lay floor
-
-		floor += '**'; // prepare for the next level
+	for(; nFloors > 0; nFloors--){ // build from the ground up
+		tower.unshift(padding + floor + padding); // stack floors
+		padding += ' '; // padding increases on each new floor
+		floor = floor.substr(2); // floor width decreases on each new floor
 	}
 
 	return tower;
