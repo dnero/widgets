@@ -5,6 +5,7 @@ These widgets are a gathering of algorithms that solve random issues one may com
 
 ## Code Example
 
+```
 // towerBuilder creates a "Christmas Tree" with **n** floors
 // http://jsben.ch/#/0Cl6P
 function towerBuilder(nFloors) {
@@ -21,3 +22,4 @@ function towerBuilder(nFloors) {
 
 	return tower;
 }
+```
