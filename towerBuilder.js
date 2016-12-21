@@ -1,3 +1,5 @@
+// Build a tower with 'n' floors
+
 // http://jsben.ch/#/0Cl6P
 
 function towerBuilder(nFloors) {

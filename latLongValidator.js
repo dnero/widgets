@@ -1,5 +1,7 @@
+// Given a string, validate the contents for proper lat/long coordinates
+
 function isValidCoordinates(coordinates){
-	var latLong = coordinates.split(',')
+	var latLong = coordinates.split(','),
 		lat = Number(latLong[0]),
 		long = Number(latLong[1]);
 

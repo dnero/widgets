@@ -1,6 +1,5 @@
-/*
- Given a list of integers and a single sum value, return the first two values (parsing from the left) in order of appearance that add up to form the sum.
- */
+// Given a list of integers and a single sum value, return the first two values (parsing from the left) in order of appearance that add up to form the sum.
+
 
 function sum_pairs(ints, s){
 	var result = [],

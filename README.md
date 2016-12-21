@@ -1,6 +1,6 @@
 ## Synopsis
 
-These widgets are a gathering of algorithms that solve random issues one may come across in the app development.
+These widgets are a gathering of algorithms that solve random issues one may come across during app development.
 
 
 ## Code Example
