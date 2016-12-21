@@ -17,3 +17,6 @@ function isValidCoordinates(coordinates){
 
 	return true;
 }
+
+// Regex solution:
+// /^-?([0-8]?[0-9](\.[0-9]+)?|90), -?(([0]?[0-9]?[0-9]|[1][0-7][0-9])(\.[0-9]+)?|180)$/
