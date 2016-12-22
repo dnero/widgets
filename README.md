@@ -1,7 +1,7 @@
 ## Synopsis
 
 These widgets are a gathering of algorithms that solve random issues one may come across during app development.
-All solutions are **intentionally** simple, clear, and easy to read/maintain.
+All solutions are **intentionally** simple, clear, and easy to read/maintain. Some will also contain benchmark results.
 
 
 ## Code Example
