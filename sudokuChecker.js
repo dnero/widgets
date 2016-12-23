@@ -1,8 +1,13 @@
-// Pass one param with 9x9 2-dimensional array and reply w/ a boolean
+// 'board' is an array containing 9 arrays of 9 numbers
 
-// 'board' is an array containing 9 arrays of 9 numbers each
-function isValidSudoku(board){
-	var oneToNine = '123456789',
+function doneOrNot(board){
+
+	var
+		startRow,
+		startCol,
+		tmpRegion,
+		oneToNine = '123456789',
+		row,
 		col1 = [],
 		col2 = [],
 		col3 = [],
@@ -12,10 +17,30 @@ function isValidSudoku(board){
 		col7 = [],
 		col8 = [],
 		col9 = [],
-		row;
+		i,
+		k,
+		l;
+
+	// check to see if all 9 regions have unique numbers
+	for(startRow = 0; startRow < 9; startRow += 3){
+
+		for(startCol = 0; startCol < 9; startCol += 3){
+
+			tmpRegion = [];
+			for(k = 0; k < 3; k++){
+				for(l = 0; l < 3; l++){
+					tmpRegion.push(board[startRow + k][startCol + l]);
+				}
+			}
+		} // end startCol loop
+
+		if(tmpRegion.sort().join('') !== oneToNine) {
+			return 'Try again!';
+		}
+	} // end starRow loop
 
 	// check to see if all 9 rows/cols have unique numbers
-	for(var i = 0; i < 9; i++){
+	for(i = 0; i < 9; i++){
 		row = board[i];
 
 		// create columns of numbers
@@ -31,10 +56,9 @@ function isValidSudoku(board){
 
 		// row check
 		if(row.sort().join('') !== oneToNine) {
-			console.log('row error');
-			return false;
+			return 'Try again!';
 		}
-	}
+	}; // end for
 
 	// check to see if cols are unique
 	if(
@@ -48,36 +72,9 @@ function isValidSudoku(board){
 		col8.sort().join('') !== oneToNine ||
 		col9.sort().join('') !== oneToNine
 	) {
-		console.log('column error');
-		return false;
+		return 'Try again!';
 	}
 
-	// TODO: check to see if all 9 regions have unique numbers
+	return 'Finished!';
 
-	return true;
 } // end doneOrNot
-
-
-isValidSudoku([
-
-// [5, 3, 4, 6, 7, 8, 9, 1, 2],
-// [6, 7, 2, 1, 9, 0, 3, 4, 9],
-// [1, 0, 0, 3, 4, 2, 5, 6, 0],
-// [8, 5, 9, 7, 6, 1, 0, 2, 0],
-// [4, 2, 6, 8, 5, 3, 7, 9, 1],
-// [7, 1, 3, 9, 2, 4, 8, 5, 6],
-// [9, 0, 1, 5, 3, 7, 2, 1, 4],
-// [2, 8, 7, 4, 1, 9, 6, 3, 5],
-// [3, 0, 0, 4, 8, 1, 1, 7, 9]
-
-[5, 3, 4, 6, 7, 8, 9, 1, 2],
-[6, 7, 2, 1, 9, 5, 3, 4, 8],
-[1, 9, 8, 3, 4, 2, 5, 6, 7],
-[8, 5, 9, 7, 6, 1, 4, 2, 3],
-[4, 2, 6, 8, 5, 3, 7, 9, 1],
-[7, 1, 3, 9, 2, 4, 8, 5, 6],
-[9, 6, 1, 5, 3, 7, 2, 8, 4],
-[2, 8, 7, 4, 1, 9, 6, 3, 5],
-[3, 4, 5, 2, 8, 6, 1, 7, 9]
-
-]);
