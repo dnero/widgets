@@ -1,0 +1,16 @@
+{
+  "name": "widgets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dnero/widgets.git",
+  "author": "D'ontreye Nero <dontreyenero@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
+  }
+}
